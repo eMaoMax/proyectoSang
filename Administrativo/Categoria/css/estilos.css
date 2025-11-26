@@ -1,0 +1,40 @@
+hr{
+    width: 111%;
+    margin-left: -25px;
+}
+
+.end{
+   padding-left: 200px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.fecha-columna {
+    max-width: 130px; 
+    word-break: break-word; 
+    text-align: center;
+}
+
+.columna-operacion-editar{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    width: 50px;
+    padding: 0.2rem;
+}
+
+.icono-tabla{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0;
+
+}
+
+.main-contenedor{
+    margin-left: 200px; 
+    display: flex;
+    justify-content: center;
+}

@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const calle = document.getElementById("calle").value;
         const carrera = document.getElementById("carrera").value;
         const numero = document.getElementById("numero").value;
-        const rol = document.getElementById("rol").value; 
-        let estado = "activo";
 
         const data = {
             nombre: nombre,
@@ -24,14 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
             calle: calle,
             carrera: carrera,
             numero: numero,
-            rol: rol,
-            estado: estado 
+            rol: "cliente",
+            estado: "activo"
         }
         
         // Opcional: Validar que todos los campos requeridos estén llenos antes de enviar
-        if (!nombre || !apellido || !telefono || !email || !password || !calle || !carrera || !numero || !rol) {
-            console.error("Por favor, complete todos los campos requeridos.");
-            // Aquí puedes agregar una alerta o mensaje al usuario en el HTML
+        if (!nombre || !apellido || !telefono || !email || !password || !calle || !carrera || !numero ) {
+            console.error("Por favor, complete todos los campos.");
             return;
         }
 
@@ -46,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Verificar si la respuesta es exitosa (código de estado 200, 201, etc.)
             if (response.ok) {
               console.log("Usuario registrado correctamente");
-
+              alert("Usuario registrado correctamente.");
               // Redirigir al usuario
-              window.location.href = "../view/listarUsuario.html";
+              window.location.href = "../viwe/login.html";
 
             } else {
               // Si la respuesta no es exitosa, puedes intentar leer el mensaje de error del servidor

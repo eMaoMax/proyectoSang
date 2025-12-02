@@ -38,7 +38,7 @@ hr{
 }
 
 .main-contenedor{
-    margin-left: 160px; 
+    margin-left: 200px;
     display: flex;
     justify-content: center;
 }
@@ -56,4 +56,9 @@ hr{
 
 .ar:hover{
      background-color: #B78832;
+}
+
+/*-----tamaño de imagen listar producto*/
+.producto-imagen-mini{
+    width: 10%;
 }

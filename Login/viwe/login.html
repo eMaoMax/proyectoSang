@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Captura de Datos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../Administrativo/Inicio/estiloAdmi.css">
+    <link rel="stylesheet" href="../../Administrativo/Usuario/css/estilos.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+    <header>          
+            
+    </header>
+    
+        <main class="main-content">            
+            <div class="container my-3">                    
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="card shadow-lg p-3">
+                            <div class="card-body">
+                                <nav class="card-header bc-header navbar-dark p-2 rounded-top">
+                                    <div class="container-fluid d-flex align-items-center">
+                                        <span class="navbar-brand d-flex align-items-center">
+                                                <img src="../../Administrativo/Inicio/img/logo.png" alt="Logo San Gabriel Café Karaoke" 
+                                                class="img-logo" >
+                                                <span class="fs-5 fw-bold text-light"> Bienvenido a San Gabriel</span>
+                                        </span>                                      
+                                    </div>
+                                </nav>
+                                <form action="#" method="POST">
+
+                                    <div class="my-4 ">
+                                            <label for="correo" class="form-label">Correo electronico</label>
+                                            <input type="email" class="form-control" id="correo" name="correo" required>
+                                        </div>
+                                    <div class="mb-3">
+                                        <label for="contrasena" class="form-label">Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="contrasena" name="contrasena" required minlength="6">
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword" aria-label="Mostrar Contraseña">
+                                                <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" id="login" class="btn btn-primary login">Ingresar</button>
+                                    </div>
+                                    <div class="d-flex justify-content-center crear-login">
+                                        <a href="crearUsuario.html" class="">¿No tienes cuenta?. Crea una aquí</a>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center gap-4">
+                                        <a href="../../../EntornoWeb/index.html" title="salir"> 
+                                            <img src="../../Administrativo/Inicio/img/salir casa.png" alt="salir" style="height: 80px;">
+                                        </a>
+                                    </div>                       
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>             
+        </main>
+
+<script src="../js/login.js"></script>    
+<script src="../../Administrativo/Usuario/js/estadoPassword.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

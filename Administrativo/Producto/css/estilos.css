@@ -57,3 +57,8 @@ hr{
 .ar:hover{
      background-color: #B78832;
 }
+
+/*-----tamaño de imagen listar producto*/
+.producto-imagen-mini{
+    width: 15%;
+}

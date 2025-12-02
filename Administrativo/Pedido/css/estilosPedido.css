@@ -1,0 +1,26 @@
+/* formulario actualizar pedido */
+.main-contenedor{
+    margin-left: 145px; 
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+     border-radius: 1rem;    
+}
+
+.act_reg {
+     border-radius: 0;
+}
+
+.ar{
+   background-color: #212529;
+    border-color: #212529;
+    border-radius: 0; 
+}
+
+.ar:hover{
+     background-color: #B78832;
+}
+/* fin */
+

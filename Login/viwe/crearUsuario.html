@@ -8,49 +8,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../../Inicio/estiloAdmi.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-    <header>
-            <nav class="bc-header navbar navbar-expand-lg navbar-dark border-bottom">
-                <div class="container-fluid d-flex">
-
-                    <div class="col-1"></div>
-                    <div class="col-7 d-flex justify-content-center py-2">
-                        <span class="navbar-brand d-flex align-items-center mb-0">
-                            <img src="../../Inicio/img/logo.png" alt="Logo San Gabriel Café Karaoke" class="img-logo me-5 ps-3">
-                            <span class="titulo h1 mb-0 fs-3"> Bienvenido a San Gabriel Café Karaoke</span>
-                        </span>
-                    </div>
-                    <div class="col-4 d-flex justify-content-end align-items-center pe-3">
-                        <a href="../../../EntornoWeb/index.html" title="salir"> 
-                            <img src="../../Inicio/img/salir casa.png" alt="salir" style="height: 80px;">
-                        </a>
-                    </div>
-                </div>
-            </nav>
-    </header>
-
-    <div class="container-fluid d-flex p-0">
-            <nav id="sidebar" class="col-2 sidebar">
-                <a href="../../Inicio/sangAdmi.html" class="btn btn-dark"><h5 class="titulo-admi text-start mb-4 ps-3">Menú de Administración</h5></a>
-                
-                <div class="nav flex-column sidebar-nav">
-                    <a class="nav-link" data-target="contenidoUsuario" href="../view/listarUsuario.html">👤 Usuario</a>
-                    <a class="nav-link" data-target="contenidoCategoria" href="../../Categoria/view/listarCategoria.html">📦 Categoría</a>
-                    <a class="nav-link" data-target="contenidoProducto" href="../../Producto/view/listarProducto.html">🛍️ Producto</a>
-                    <a class="nav-link" data-target="contenidoPedido" href="../../Pedido/view/listarPedido.html">📝 Pedido</a>
-                    <a class="nav-link" data-target="contenidoDetalle" href="#">📄 Detalle de Pedido</a>
-                    <a class="nav-link" data-target="contenidoPago" href="#">💳 Pago</a>
-                </div>
-            </nav>
-        <main class="main-contenedor d-flex align-items-center justify-content-center">
-            <div class="container my-3">
+    
+     <main class="main-content">
+            <div class="container my-5">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-8">
+                    <div class="col-md-8 col-lg-6">
                         <div class="card shadow-lg p-3">
                             <div class="card-body">
-                                <h2 class="card-title text-center mb-4">Registro de Usuario</h2>
-                                <form action="#">
+                                <nav class="card-header bc-header navbar-dark p-2 rounded-top">
+                                    
+                                        <span class="navbar-brand d-flex align-items-center">
+                                                <img src="../../Administrativo/Inicio/img/logo.png" alt="Logo San Gabriel Café Karaoke" 
+                                                class="img-logo me-2" style="height: 60px; width:auto;">
+                                                <span class="fs-5 fw-bold text-light"> Bienvenido a San Gabriel</span>
+                                        </span>                                      
+                                </nav>
+                                
+                                <form action="#" method="POST">
                                     
                                     <div class="row mb-3">
                                         <div class="col-md-6">
@@ -75,7 +52,7 @@
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label for="contrasena" class="form-label">Contraseña</label>
+                                        <label for="contrasena" class="form-label">Crear Contraseña</label>
                                         <div class="input-group">
                                             <input type="password" class="form-control" id="contrasena" name="contrasena" required minlength="6">
                                             <button class="btn btn-outline-secondary" type="button" id="togglePassword" aria-label="Mostrar Contraseña">
@@ -100,17 +77,10 @@
                                         <small class="form-text text-muted">Ej: Calle 10, Carrera 5, Num. 23</small>
                                     </div>
                                     
-                                    <div class="mb-4">
-                                        <label for="rol" class="form-label">Rol</label>
-                                        <select class="form-select" id="rol" name="rol" required>
-                                            <option value="" disabled selected>Selecciona un rol</option>
-                                            <option value="mesero">Mesero</option>
-                                            <option value="cliente">Cliente</option>
-                                        </select>
-                                    </div>
-                                    <div class="d-flex justify-content-center gap-4">
-                                        <button type="button" id="registrar" class="btn btn-success btn-lg ar">Registrar</button>
-                                        <a href="listarUsuario.html" class="btn btn-primary btn-lg ar">Regresar</a>
+                                    
+                                    <div class="d-flex justify-content-evenly">
+                                        <button type="button" id="registrar" class="btn btn-primary rr">Registrar</button>
+                                        <a href="login.html" class="btn btn-primary rr">Regresar</a>
                                     </div>                       
                                 </form>
                             </div>
@@ -119,15 +89,9 @@
                 </div>
             </div>
         </main>
-    </div>
-    
-    
-    <footer>
-        <!-- place footer here -->
-    </footer>    
 
 <script src="../js/postUsuario.js"></script>    
-<script src="../js/estadoPassword.js"></script>
+<script src="../../Administrativo/Usuario/js/estadoPassword.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

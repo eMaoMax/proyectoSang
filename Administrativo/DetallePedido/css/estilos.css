@@ -1,0 +1,14 @@
+/* botones Anterior y Siguiente */
+.an-si {
+     border-radius: 0;
+}
+
+.as{
+   background-color: #212529;
+    border-color: #212529;
+    border-radius: 0; 
+}
+
+.as:hover{
+     background-color: #B78832;
+}

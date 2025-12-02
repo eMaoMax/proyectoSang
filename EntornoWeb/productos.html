@@ -35,7 +35,7 @@
                 <div class="nav navbar-nav" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
                     <a class="nav-item nav-link active" href="index.html" aria-current="page"
                         >Inicio <span class="visually-hidden">(current)</span></a>
-                    <a class="nav-item nav-link" href="productos.html">Productos</a>
+                    <a class="nav-item nav-link" href="categoriaProductos.html">Productos</a>
                     <a class="nav-item nav-link" href="quienesSomos.html">¿Quiénes somos?</a>
                     <a class="nav-item nav-link" href="ubiquenos.html">Ubiquenos</a>
                 </div>
@@ -48,34 +48,10 @@
         </nav>
         <main class="pb-4">
             <div class="container mt-4">
-                <h2 class="text-center">Categoria de Productos</h2>
-                <div class="row pt-2">
-                  <div class="col-md-4">
-                    <div class="card">
-                      <a href="#"><img src="img/caliente.jpg" class="card-img-top" alt="..."></a>
-                      <div class="card-body mx-auto">
-                        <h5 class="card-title">Bebidas Calientes</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card">
-                      <a href="#"><img src="img/cocteles.png" class="card-img-top" alt="..."></a>
-                      <div class="card-body mx-auto">
-                        <h5 class="card-title">Coctelería</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card">
-                        <a href="#"><img src="img/bebidas_frias.png" class="card-img-top" alt="..."></a>
-                      <div class="card-body mx-auto">
-                        <h5 class="card-title">Bebidas Frías</h5>
-                      </div>
-                    </div>
-                  </div>
+                <h2 class="text-center">Productos</h2>
+                <div id="imagenProductos" class="row row-cols-1 row-cols-md-3 g-4 mt-2">                
                 </div>
-              </div>
+            </div>
         </main>
         <footer>
             <div class="container-fluid bg-secondary" style="height: 280px;">
@@ -108,6 +84,7 @@
             </div>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
+         <script src="js/productos.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -5,37 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     registrar.addEventListener("click", (e) => {
         e.preventDefault(); 
         const nombre = document.getElementById("nombre").value;
-        const apellido = document.getElementById("apellido").value;
-        const telefono = document.getElementById("telefono").value;
-        const email = document.getElementById("correo").value;
-        const password = document.getElementById("contrasena").value;
-        const calle = document.getElementById("calle").value;
-        const carrera = document.getElementById("carrera").value;
-        const numero = document.getElementById("numero").value;
-        const rol = document.getElementById("rol").value; 
-        let estado = "activo";
+        const imagen = document.getElementById("imagen").value;
 
         const data = {
-            nombre: nombre,
-            apellido: apellido,
-            telefono: telefono,
-            email: email,
-            password: password,
-            calle: calle,
-            carrera: carrera,
-            numero: numero,
-            rol: rol,
-            estado: estado 
+            nombre_categoria: nombre,
+            imagen: imagen
         }
         
         // Opcional: Validar que todos los campos requeridos estén llenos antes de enviar
-        if (!nombre || !apellido || !telefono || !email || !password || !calle || !carrera || !numero || !rol) {
+        if (!nombre || !imagen) {
             console.error("Por favor, complete todos los campos requeridos.");
             // Aquí puedes agregar una alerta o mensaje al usuario en el HTML
             return;
         }
 
-        fetch("http://sang.somee.com/api/usuario", {
+        fetch("http://sang.somee.com/api/categoria", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
@@ -45,15 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((response) => {
             // Verificar si la respuesta es exitosa (código de estado 200, 201, etc.)
             if (response.ok) {
-              console.log("Usuario registrado correctamente");
+              console.log("Categoria creada correctamente");
 
               // Redirigir al usuario
-              window.location.href = "../view/listarUsuario.html";
+              window.location.href = "../view/listarCategoria.html";
 
             } else {
               // Si la respuesta no es exitosa, puedes intentar leer el mensaje de error del servidor
               return response.json().then(err => {
-                console.error("Error al registrar usuario:", response.status, err);
+                console.error("Error al registrar categoria:", response.status, err);
                 alert(`Error al registrar: ${err.message || response.statusText}`);
               });
             }

@@ -1,0 +1,45 @@
+.login {
+    background-color: #8B591B;
+    border-color: #8B591B;
+    border-radius: 0;
+}
+
+.login:hover{
+    background-color: goldenrod;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+}
+
+a:hover{
+    color: #323086;
+}
+
+.crear-login {
+    padding-top: 3%;
+}
+
+.bc-header{
+    background-color: #212529;
+    color: #fff;
+    margin: 15px;
+}
+
+.rr{
+   background-color: #212529;
+    border-color: #212529;
+    border-radius: 0; 
+}
+
+.rr:hover{
+     background-color: #B78832;
+}
+
+.img-logo{
+    height: 60px;
+    width: auto;
+    margin-right: 5px;
+}
+

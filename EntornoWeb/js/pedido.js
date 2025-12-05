@@ -231,7 +231,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
   // Insertar la sección del carrito debajo del main.card (si existe) o al final del container
   const mainCard = document.querySelector('main.card');
   if (mainCard && mainCard.parentNode) {
@@ -240,7 +239,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container') || document.body;
     container.appendChild(carritoSection);
   }
-
-
 
 });

@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const row = document.createElement("tr");
           row.innerHTML = `
             <td class="text-center" >${user.id_pago}</td>
-            <td class="text-center" >${user.id_kfUsuario}</td>
-            <td class="text-center" >${user.id_kfPedido}</td>
+            <td class="text-center" >${user.id_fkUsuario}</td>
+            <td class="text-center" >${user.id_fkPedido}</td>
             <td class="text-center" >${user.forma_pago}</td>
             `;
 

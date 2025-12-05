@@ -2,20 +2,14 @@
 <html lang="en">
     <head>
         <title>Detalle de Productos</title>
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="css/estilo.css">
-        <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+            crossorigin="anonymous"/>
     </head>
 
     <body>
@@ -29,31 +23,63 @@
             </div>
         </header>
 
-        <!--Menú. bs5-navbar-minmal-a-->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background: linear-gradient(to bottom right,#f4c294, #FFFEFE);">
             <div class="container-fluid">
                 <div class="nav navbar-nav" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
-                    <a class="nav-item nav-link active" href="index.html" aria-current="page"
-                        >Inicio <span class="visually-hidden">(current)</span></a>
+                    <a class="nav-item nav-link active" href="index.html" aria-current="page">Inicio
+                        <span class="visually-hidden">(current)</span>
+                    </a>
                     <a class="nav-item nav-link" href="categoriaProductos.html">Productos</a>
                     <a class="nav-item nav-link" href="quienesSomos.html">¿Quiénes somos?</a>
                     <a class="nav-item nav-link" href="ubiquenos.html">Ubiquenos</a>
                 </div>
             </div>
             <div class="iconos">
-                <a href="#"><img src="img/Carrito de compras.png" alt="Compras"></a>
+                <a href="pedido.html"><img src="img/Carrito de compras.png" alt="Compras"></a>
                 <a href="#"><img src="img/Busqueda.png" alt="Busqueda"></a>
                 <a href="#"><img src="img/Registro.png" alt="Registro"></a>
             </div>
         </nav>
-        <main class="pb-4">
-            <div class="container mt-4">
-                <h2 class="text-center">Detalle del Producto</h2>
-
-                <div id="imagenProductos" class="row row-cols-1 row-cols-md-3 g-4 mt-2">                
+        <div class="container my-4">
+            <h2 class="text-center">Detalle del Producto</h2>
+            <main class="card">
+                <div class="row product-details mt-5">
+                    <div class="col-md-5 mb-4 " id="imgDetalleProducto">
+                    </div>
+                    <div class="col-md-7 pt-5">
+                        <div class="product-info">
+                            <h3 class="text-uppercase mb-3" id="nombre_producto"></h3>
+                            <div class="card p-3 mb-4 border-dashed" style="border-style: dashed;">
+                                <p class="fw-bold mb-1">Descripción</p>
+                                <p class="text-muted small" id="descripcion"></p>
+                            </div>
+                            <div class="product-options mb-4">
+                                <div class="d-flex justify-content-md-start align-items-center mb-2">
+                                    <span class="fw-bold text-muted">Precio</span>
+                                    <span class="fs-4 fw-bolder text-success ps-5" id="precio"></span>
+                                </div>
+                                <div class="d-flex align-items-center mt-2">
+                                    <label for="quantity" class="form-label mb-0 me-3 fw-bold text-muted">Cantidad</label>
+                                    <input type="number" id="quantity" name="quantity" class="form-control w-25" value="" min="1">
+                                </div>
+                                <div class="d-flex justify-content-md-start align-items-center mt-4">
+                                    <span class="fw-bold text-muted">Subtotal</span>
+                                    <span class="fs-4 fw-bolder text-info ps-4" id="subtotal"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </main>
+            <hr class="my-5">
+            <div class="text-center">
+                <button class="btn btn-dark btn-lg rounded-circle p-3" id="agregarProducto" style="width: 70px; height: 70px;">
+                    <span class="fs-4">🛒</span>
+                </button>
+                <p class="mt-2 text-muted">Agregar al Carrito</p>
             </div>
-        </main>
+
+        </div>
         <footer>
             <div class="container-fluid bg-secondary" style="height: 280px;">
                 <div class="row p-4 col-12 justify-content-center">
@@ -84,14 +110,13 @@
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
-         <script src="js/productos.js"></script>
+
+        <script src="js/detalleProducto.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"
         ></script>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"

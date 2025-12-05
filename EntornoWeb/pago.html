@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .modal-pago {
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .modal-pago-header {
+            background: linear-gradient(to bottom right, #f4c294, #FFFEFE);
+            border-radius: 20px 20px 0 0;
+        }
+        .pago-container {
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .pago-titulo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .pago-total {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .forma-pago-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .forma-pago-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .botones-pago {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .btn-pagar {
+            background-color: #90EE90;
+            color: #333;
+            border: 2px solid #333;
+            padding: 10px 40px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-pagar:hover {
+            background-color: #7FD87F;
+            transform: scale(1.05);
+        }
+        .btn-cancelar {
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #333;
+            padding: 10px 40px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-cancelar:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal Pago -->
+    <div class="modal fade" id="modalPago" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-pago">
+                <div class="modal-header modal-pago-header border-0">
+                    <h5 class="modal-title pago-titulo">Pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pago-container">
+                    <div class="pago-total">
+                        Total: <span id="totalPago">$ 0.00</span>
+                    </div>
+                    <label class="forma-pago-label">Forma de Pago:</label>
+                    <select id="formaPago" class="forma-pago-select">
+                        <option value="">-- Selecciona una forma de pago --</option>
+                        <option value="PSE">PSE</option>
+                        <option value="Daviplata">Daviplata</option>
+                        <option value="Nequi">Nequi</option>
+                        <option value="Efectivo">Efectivo</option>
+                    </select>
+                    <div class="botones-pago">
+                        <button type="button" class="btn-pagar" id="btnPagar">Pagar</button>
+                        <button type="button" class="btn-cancelar" id="btnCancelar" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9eAYUguTD4M+Df2PCVmb+7gAP0T8RTFN3IH3lCCyNrFqKO5J0Y8ZQo7C" crossorigin="anonymous"></script>
+    <script src="js/pago.js"></script>
+</body>
+</html>

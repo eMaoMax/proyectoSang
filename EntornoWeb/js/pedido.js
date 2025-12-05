@@ -73,10 +73,24 @@ document.addEventListener("DOMContentLoaded", () => {
     table.appendChild(tbody);
     carritoSection.appendChild(table);
 
+    const subtotalDiv = document.createElement('div');
+    subtotalDiv.className = 'text-end fw-bold fs-5 mt-3';
+    subtotalDiv.id = 'subtotal-carrito';
+    subtotalDiv.textContent = `Subtotal: $ ${Number(total).toLocaleString()}`;
+    carritoSection.appendChild(subtotalDiv);
+
+    const ivaDiv = document.createElement('div');
+    ivaDiv.className = 'text-end fw-bold fs-5';
+    ivaDiv.id = 'iva-carrito';
+    const ivaInitial = Number(total) * 0.19;
+    ivaDiv.textContent = `IVA (19%): $ ${Number(ivaInitial).toLocaleString()}`;
+    carritoSection.appendChild(ivaDiv);
+
     const totalDiv = document.createElement('div');
-    totalDiv.className = 'text-end fw-bold fs-4 mt-3';
+    totalDiv.className = 'text-end fw-bold fs-4 mt-2';
     totalDiv.id = 'total-carrito';
-    totalDiv.textContent = `Total: $ ${Number(total).toLocaleString()}`;
+    const totalInitial = Number(total) + ivaInitial;
+    totalDiv.textContent = `Total: $ ${Number(totalInitial).toLocaleString()}`;
     carritoSection.appendChild(totalDiv);
 
     // Botón confirmar pedido
@@ -148,6 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error('No se recibió id_pedido del servidor.');
         }
 
+        // Guardar id_pedido para uso en el modal de pago
+        try {
+          sessionStorage.setItem('lastPedidoId', String(id_pedido));
+        } catch (e) {
+          console.warn('No se pudo guardar lastPedidoId en sessionStorage', e);
+        }
+
         // Enviar detalle por cada item
         const detallesPromises = carritoProcesado.map(item => {
           const detallePayload = {
@@ -168,10 +189,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         await Promise.all(detallesPromises);
 
-        // Si todo sale bien, limpiar carrito y redirigir
-        sessionStorage.removeItem('carrito');
-        alert('Pedido registrado correctamente.');
-        window.location.href = 'index.html';
+        // Si todo sale bien, abrir el modal de pago en esta misma página
+        alert('Pedido registrado correctamente. Procede al pago.');
+        const modalEl = document.getElementById('modalPago');
+        try {
+          if (modalEl && typeof bootstrap !== 'undefined') {
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+          } else {
+            // Fallback: redirigir a la página de pago separada
+            window.location.href = 'pago.html';
+          }
+        } catch (e) {
+          console.warn('No se pudo abrir el modal de pago, redirigiendo...', e);
+          window.location.href = 'pago.html';
+        }
 
       } catch (err) {
         console.error('Error al registrar pedido:', err);
@@ -193,7 +225,14 @@ document.addEventListener("DOMContentLoaded", () => {
           nuevoTotal += subtotal;
         }
       });
-      document.getElementById('total-carrito').textContent = `Total: $ ${Number(nuevoTotal).toLocaleString()}`;
+      const iva = nuevoTotal * 0.19;
+      const totalConIva = nuevoTotal + iva;
+      const subtotalEl = document.getElementById('subtotal-carrito');
+      const ivaEl = document.getElementById('iva-carrito');
+      const totalEl = document.getElementById('total-carrito');
+      if (subtotalEl) subtotalEl.textContent = `Subtotal: $ ${Number(nuevoTotal).toLocaleString()}`;
+      if (ivaEl) ivaEl.textContent = `IVA (19%): $ ${Number(iva).toLocaleString()}`;
+      if (totalEl) totalEl.textContent = `Total: $ ${Number(totalConIva).toLocaleString()}`;
     }
 
     // Usar delegación de eventos en la tabla

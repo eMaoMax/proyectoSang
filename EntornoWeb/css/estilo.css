@@ -5,12 +5,13 @@
 /*Cabeza de pagina*/
 header{
     height: 200px;
-    background: linear-gradient(to bottom right,#EA862A, white );
+    background-color: #1c2533;
     display: flex;
     overflow: hidden;
 }
 /*Bloque-titulo-subtitulo-logo*/
 .bloque-elementos{
+    color: #fff;
     width: 100%;
     display: flex;
 }
@@ -30,7 +31,7 @@ header{
 }
 
 .logo img{
-    width: 35%;
+    width: 48%;
     margin: 5px 0px 0px 0px;
 }
 

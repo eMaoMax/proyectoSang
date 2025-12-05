@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = document.getElementById("contrasena").value;
 
             const data = {
-                email: email, 
-                password: password 
+                email: email,
+                password: password
             }
             if (!email || !password ) {
                 console.error("Por favor, complete todos los campos.");
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            })            
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error de red o del servidor: ' + response.statusText);
                 }
-                return response.json(); 
+                return response.json();
             })
             .then(loginResult => {
                 if (loginResult.id_usuario !== 0 && loginResult.rol !== null) {
@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem('userId', loginResult.id_usuario);
                     localStorage.setItem('userRole', loginResult.rol);
                     if (loginResult.rol === "administrador") {
-                        window.location.href = "../../Administrativo/Inicio/sangAdmi.html"; // Ejemplo de ruta
+                        window.location.href = "../../Administrativo/Inicio/sangAdmi.html";
                     } else if (loginResult.rol === "mesero" || loginResult.rol === "cliente") {
-                        window.location.href = "../../EntornoWeb/index.html"; // Ejemplo de ruta
+                        window.location.href = "../../EntornoWeb/index.html";
                     } else {
                         window.location.href = "../../EntornoWeb/index.html";
                     }

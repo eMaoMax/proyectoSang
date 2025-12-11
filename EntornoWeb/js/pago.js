@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Obtener datos necesarios
-    const userId = localStorage.getItem('userId');
+    const userId = sessionStorage.getItem('userId');
     const id_pedido = sessionStorage.getItem('lastPedidoId') || (() => {
       const currentOrder = sessionStorage.getItem('currentOrder');
       if (currentOrder) {
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!confirm('¿Deseas cancelar el pedido?')) return;
 
     try {
-      const userId = localStorage.getItem('userId');
+      const userId = sessionStorage.getItem('userId');
       const currentOrderRaw = sessionStorage.getItem('currentOrder');
       let orderData = {};
       if (currentOrderRaw) {

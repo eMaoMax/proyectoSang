@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     // --- LOGIN EXITOSO ---
                     console.log("Login Exitoso. Rol:", loginResult.rol, "ID:", loginResult.id_usuario);
                     alert("¡Bienvenido a SAN GABRIEL CAFÉ KARAOKE!");
-                    localStorage.setItem('userId', loginResult.id_usuario);
-                    localStorage.setItem('userRole', loginResult.rol);
+                    sessionStorage.setItem('userId', loginResult.id_usuario);
+                    sessionStorage.setItem('userRole', loginResult.rol);
                     if (loginResult.rol === "administrador") {
                         window.location.href = "../../Administrativo/Inicio/sangAdmi.html";
                     } else if (loginResult.rol === "mesero" || loginResult.rol === "cliente") {

@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     confirmBtn.addEventListener('click', async (e) => {
       e.preventDefault();
 
-      const userId = localStorage.getItem('userId');
-      const userRole = localStorage.getItem('userRole');
+      const userId = sessionStorage.getItem('userId');
+      const userRole = sessionStorage.getItem('userRole');
 
       // Si no hay usuario en localStorage, redirigir a login
       if (!userId || !userRole) {
